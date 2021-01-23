@@ -1,0 +1,228 @@
+.submenu{
+    padding:0 !important;
+    padding: 10px 10px;
+    background-color:#ffffff;
+    position: absolute;
+    min-width: 220px;
+}
+.submenu li{
+    width:100%;
+    padding: 5px 5px !important;
+}
+
+.submenu li:first-child{
+  border-top: 1px solid #cccccc;
+}
+
+.submenu li a{
+color:#000 !important;
+height: auto !important;
+line-height:5px !important;
+text-transform:uppercase;
+width :400px !important;
+}
+.submenu li:hover{
+background-color:lightgray;
+transition: all 0.3s ease-out;
+}
+
+.accordion li a{
+  text-transform: uppercase;
+}
+.kurumsalmenu{
+  padding-bottom: 30px;
+}
+.kurumsalmenu li a{
+    font-weight: 400;
+    color:#fff; 
+    text-decoration: none;
+}
+.kurumsalmenu li {
+    margin-top: 1px;
+    padding: 10px;
+    background-color: #28a7e9;
+}
+
+.kurumsalmenu li:hover {
+    background-color: #000000;
+    transition: all 0.3s ease-out;
+}
+
+.menuactive{
+    background-color: #000000 !important;
+}
+p {
+    font-weight: 400 !important;
+    line-height: 30px;
+}
+
+.socialicon-bar {
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 99;
+  }
+  
+  .socialicon-bar a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+    /*color: gray;*/
+    font-size: 20px;
+  }
+  
+  .socialicon-bar a:hover {
+    background-color: #000;
+  }
+  
+  .facebook {
+    /*background: #3B5998;*/
+    color: #3B5998;
+  }
+  
+  .twitter {
+    /*background: #55ACEE;*/
+    color: #55ACEE;
+  }
+  
+  footer{
+      position: fixed;
+      bottom: 0;
+      background-color: #303030;
+      z-index: 100;
+      width: 100%;
+      padding: 0;
+      height: 30px;
+  }
+  
+  .linkedin {
+    /*background: #007bb5;*/
+    color: #007bb5;
+  }
+
+  .youtube {
+    /*background: #c4302b;*/
+    color: #c4302b;
+  }
+
+  .instagram {
+    /*background: #3f729b;*/
+    color: #3f729b;
+  }
+  
+  header p{
+      margin: 0 0 0 !important;
+  }
+
+
+  /* The Magic */
+.accordion:hover .accordion-item:hover .accordion-item-content,
+.accordion .accordion-item--default .accordion-item-content {
+    height: auto;
+}
+
+.accordion-item-content,
+.accordion:hover .accordion-item-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s;
+    position: absolute;
+    width: 100%;
+    z-index: 10;    
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(224,224,224,1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(224,224,224,1);
+    box-shadow: 0px 3px 5px 0px rgba(224,224,224,1);
+}
+
+.accordion {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.accordion .accordion-item {
+  color: #eee;
+}
+
+.accordion h1 {
+  margin: 0;
+}
+
+.slider-item{
+  background-size: 100% 100% !important;
+  min-height: 650px;
+  padding-top: 160px;
+  padding-bottom: 100px;
+}
+
+.slick-slide {
+  outline: none
+}
+
+.slider-h{
+  margin-top: 150px;
+}
+
+.divfile {
+  position: relative;
+  overflow: hidden;
+  width: 100% !important;
+  border-radius: none !important;
+  background-color: #28a7e9;
+  margin-top: 7px;
+  height: 50px !important;
+}
+.fileinput {
+  position: absolute;
+  font-size: 50px;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+#submit_button:hover{
+  color:#000
+} 
+
+header .container .row div:first-child{
+  display: none;
+}
+
+header .container .row div:nth-child(2){
+  width: 50% !important;
+}
+
+header .container .row div:last-child{
+  float: right;
+}
+
+/* Ortam Kodları*/
+
+@media only screen and (max-width:960px) {
+  .submenu{
+      position: relative;      
+      padding-left: 30px !important;
+  }
+
+  .accordion-item-content, .accordion:hover .accordion-item-content {
+    position: relative !important;
+    z-index: 10000;
+  }
+
+  .slider-h{
+    margin-top: -50px !important;
+  }
+}
+
+@media (min-width: 768px){
+  .container>.navbar-header{
+    height: 80px;
+  }
+    .navbar-nav>li>a {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    
+}
+

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title class="lang" key="title">{{sitedata.sitename}}</title>
+    <meta charset="utf-8">
+    <meta name="description" content="{{metadata.description}}">
+    <meta name="keywords" content="{{metadata.keywords}}">
+    <meta name="author" content="{{metadata.author.name}} - {{metadata.author.email}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="{{ '/assets/images/favico.png' | url }}">
+
+    <link rel="stylesheet" href="{{ '/assets/css/animate.min.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/font-awesome.min.css' | url }}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ '/assets/css/templatemo-style.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/js/slick/slick.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/js/slick/slick-theme.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/lightbox.min.css' | url }}">
+    <script src="{{ '/assets/js/jquery.js' | url }}"></script>
+    <script src="{{ '/assets/js/bootstrap.min.js' | url }}"></script>
+    <script src="{{ '/assets/js/typed.js' | url }}"></script>
+    <script src="{{ '/assets/js/wow.min.js' | url }}"></script>
+    <script src="{{ '/assets/js/custom.js' | url }}"></script>
+    <script src="{{ '/assets/js/site.js' | url }}"></script>
+    <script src="{{ '/assets/js/lightbox.js' | url }}"></script>
+    <script src="{{ '/assets/js/localizasyon.js' | url }}"></script>
+  </head>
+  <!-- page wrapper -->
+  <body id="top">
+
+    <!-- start preloader -->
+    <div class="preloader">
+      <div class="sk-spinner sk-spinner-wave">
+        <div class="sk-rect1"></div>
+        <div class="sk-rect2"></div>
+        <div class="sk-rect3"></div>
+        <div class="sk-rect4"></div>
+        <div class="sk-rect5"></div>
+      </div>
+    </div>
+    <!-- end preloader -->
+
+    <!-- start header -->
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <p>
+              <i class="fa fa-phone"></i>
+              <span class="lang" key="telefon"></span>
+              <a href="tel:{{sitedata.tel}}">{{sitedata.tel}}</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <p>
+              <i class="fa fa-envelope-o"></i>
+              <span class="lang" key="mail"></span>
+              <a href="mailto:{{sitedata.email}}">{{sitedata.email}}</a>
+            </p>
+          </div>
+          <div class="col-md-5 col-sm-4 col-xs-12">
+            <ul class="social-icon">
+              <!--li><span>Meet us on</span></li-->
+              <li>
+                <a href="#" class="translate" id="tr"><img src="{{'/assets/images/tr.png' | url}}" width="30px"></a>
+              </li>
+              <li>
+                <a href="#" class="translate" id="en"><img src="{{'/assets/images/en.png' | url}}" width="30px"></a>
+              </li>
+              <li>
+                <a href="#" class="translate" id="fr"><img src="{{'/assets/images/fr.png' | url}}" width="30px"></a>
+              </li>
+              <li>
+                <a href="#" class="translate" id="de"><img src="{{'/assets/images/de.png' | url}}" width="30px"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header -->
+    <!-- start navigation -->
+    <nav class="navbar navbar-default templatemo-nav" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+            <span class="icon icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">
+            <img src="{{'/assets/images/logo.png' | url}}" width="190">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right accordion">
+            <li>
+              <a href="/" class="lang" key="anasayfa"></a>
+            </li>
+            <li class="accordion-item">
+              <a href="#" class="accordion">
+                <span class="lang" key="kurumsal"></span>
+                <i class="fa fa-sort-desc" style="position:relative; top:-3px"></i>
+              </a>
+              <ul class="accordion-item-content nav navbar-nav navbar-right submenu">
+                {%- for item in collections.kurumsal[0].data.kurumsal -%}
+                  <li>
+                    <a href="{{item.url}}" class="lang" key="{{item.langkey}}"></a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </li>
+            <li class="accordion-item">
+              <a href="#">
+                <span class="lang" key="faaliyet"></span>
+                <i class="fa fa-sort-desc" style="position:relative; top:-3px"></i>
+              </a>
+              <ul class="accordion-item-content nav navbar-nav navbar-right submenu">
+                {%- for item in collections.faaliyet[0].data.faaliyetler -%}
+                  {# class="menuactive" #}
+                  <li>
+                    <a href="{{item.url}}" class="lang" key="{{item.langkey}}"></a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </li>
+            <!-- <li><a href="/kutuphane.html">KÜTÜPHANE</a></li> -->
+
+            <li class="accordion-item">
+              <a href="#">
+                <span class="lang" key="kutuphane"></span>
+                <i class="fa fa-sort-desc" style="position:relative; top:-3px"></i>
+              </a>
+              <ul class="accordion-item-content nav navbar-nav navbar-right submenu">
+                {%- for item in collections.kutuphane[0].data.kutuphaneler -%}
+                  <li>
+                    <a href="{{item.url}}" class="lang" key="{{item.langkey}}"></a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </li>
+
+            <li class="accordion-item">
+              <a href="#">
+                <span class="lang" key="insan"></span>
+                <i class="fa fa-sort-desc" style="position:relative; top:-3px"></i>
+              </a>
+              <ul class="accordion-item-content nav navbar-nav navbar-right submenu">
+                {%- for item in collections.ik[0].data.kaynaklar -%}
+                  <li>
+                    <a href="{{item.url}}" class="lang" key="{{item.langkey}}"></a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </li>
+            <li>
+              <a href="/iletisim" class="lang" key="iletisim"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- end navigation -->
+
+    <div class="socialicon-bar">
+      <a href="#" class="facebook">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="#" class="twitter">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="#" class="linkedin">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <a href="#" class="youtube">
+        <i class="fa fa-youtube"></i>
+      </a>
+      <a href="#" class="instagram">
+        <i class="fa fa-instagram"></i>
+      </a>
+    </div>
+
+    {{content | safe}}
+
+    <footer id="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+              {{sitedata.copyright | safe}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        var lang = getCookie("_culture");
+        document.documentElement.lang = lang;
+      });
+    </script>
+  </body>
+</html>

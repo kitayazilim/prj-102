@@ -1,0 +1,239 @@
+---
+layout: layouts/base.njk
+tags: anasayfa
+eleventyNavigation:
+  key: Anasayfa
+  order: 1
+  aka: anasayfa
+---
+
+<style>
+  .modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+  }
+
+  .modal-body {
+    position: relative;
+    padding: 0;
+  }
+  .close {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    z-index: 999;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #fff;
+    opacity: 1;
+  }
+</style>
+
+<!-- start home -->
+<section id="home">
+  <div class="slider">
+    <div class="slider-item" style="background: url('../assets/images/1.jpg') no-repeat;">
+      <div class="container">
+        <div class="col-md-offset-2 col-md-8" style="margin-left: 0;">
+
+          <h1 class="wow fadeIn slider-h" data-wow-offset="50" data-wow-delay="0.9s" style="font-size: 35px;">
+            <label style="font-weight: 300;" class="lang" key="soz1sat1"></label>
+            <br>
+            <label class="lang" key="soz1sat2" style="font-weight: 300;"></label><br>
+            <strong>"Tagore"</strong>
+          </h1>
+
+          <!--<a data-scroll href="/iletisim.html" class="btn btn-default wow fadeInUp" data-wow-offset="50" data-wow-delay="0.6s">İletişime Geç</a> -->
+        </div>
+      </div>
+    </div>
+    <div class="slider-item" style="background: url('../assets/images/2.jpg') no-repeat;">
+      <div class="container">
+        <div class="col-md-offset-2 col-md-8" style="margin-left: 0;">
+
+          <h1 class="wow fadeIn slider-h" data-wow-offset="50" data-wow-delay="0.9s" style="font-size: 35px;">
+            <label style="font-weight: 300;" class="lang" key="soz2"></label>
+            <br>
+            <strong>"Mustafa Kemal Atatürk"</strong>
+          </h1>
+
+        </div>
+      </div>
+    </div>
+    <div class="slider-item" style="background: url('../assets/images/3.jpg') no-repeat;">
+      <div class="container">
+        <div class="col-md-offset-2 col-md-8" style="margin-left: 0;">
+          <h1 class="wow fadeIn slider-h" data-wow-offset="50" data-wow-delay="0.9s" style="font-size: 35px;">
+            <label style="font-weight: 300;" class="lang" key="soz3"></label>
+            <strong>"Muhammed Ali"</strong>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end home -->
+
+<section id="portfolio" style="padding-top: 30px;">
+  <p>
+    <h3 style="text-align: center; margin-bottom: 30px; padding: 10px; font-weight: 600;  text-transform:uppercase" class="lang" key="faaliyet"></h3>
+  </p>
+  <div class="container" style="padding-left: 0;">
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/rulman" title="Konveyor Bant">
+          <img src="{{'assets/images/urunler/rulman.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="rulman"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/gres" title="Gres">
+          <img src="{{'assets/images/urunler/gres.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="gres"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/segmanlar" title="Segman">
+          <img src="{{'assets/images/urunler/segman.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="segman"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/kayislar" title="Kayış">
+          <img src="{{'assets/images/urunler/kayislar.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="kayis"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/kasnaklar" title="Kasnak">
+          <img src="{{'assets/images/urunler/kasnaklar.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="kasnak"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/kaplinler" title="Kaplin">
+          <img src="{{'assets/images/urunler/kaplinler.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="kaplin"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/kremayerler" title="Kremayer">
+          <img src="{{'assets/images/urunler/kremayer.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="kremayer"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/konik_burclar" title="Konik Burç">
+          <img src="{{'assets/images/urunler/konik_burclar.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="konik"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/sizdirmazlik_elemanlari" title="Yağ Keçeleri">
+          <img src="{{'assets/images/urunler/yag_keceleri.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="sizdirmaz"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/zincir" title="Zincir">
+          <img src="{{'assets/images/urunler/zincir.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="zincir"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/sanayi_tekerleri" title="Sanayi Tekerleri">
+          <img src="{{'assets/images/urunler/sanayi_tekerleri.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="sanayi"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/elektrik_motorlari" title="Elektrik Motorları">
+          <img src="{{'assets/images/urunler/elektrik_motorlari.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="elektrik"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/reduktorler" title="Redüktör">
+          <img src="{{'assets/images/urunler/reduktor.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="reduktor"></h4>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 wow fadeIn animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;" data-wow-offset="50" data-wow-delay="0.6s">
+      <div class="portfolio-thumb" style="border: 1px solid #000">
+        <a href="/konveyor_bant" title="Konveyor Bant">
+          <img src="{{'assets/images/urunler/konveyor_bantlar.jpg' | url}}" class="img-responsive" alt="portfolio img 1">
+          <div class="portfolio-overlay"></div>
+
+        </a>
+        <h4 style="text-align: center; background-color: lightgray; padding:10px; margin-bottom: -5px; margin-top: -5px" class="lang" key="konveyor"></h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script src="{{ '/assets/js/slick/slick.min.js' | url }}"></script>
+<script>
+  $('.slider').slick({slidesToShow: 1, slidesToScroll: 1, autoplay: true, autoplaySpeed: 5000, dots: true});
+</script>

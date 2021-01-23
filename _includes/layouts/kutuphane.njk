@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+tags: kutuphane
+
+kutuphaneler:
+    -
+        langkey: gres
+        url: /gres_content
+    -
+        langkey: kayis
+        url: /kayislar_content
+    -
+        langkey: kasnak
+        url: /kasnaklar_content
+    -
+        langkey: kaplin
+        url: /kaplinler_content
+    -
+        langkey: kremayer
+        url: /kremayerler_content
+    -
+        langkey: zincir
+        url: /zincir_content
+    -
+        langkey: elektrik
+        url: /elektrik_motorlari_content
+    -
+        langkey: reduktor
+        url: /reduktorler_content
+---
+
+<div class="container" style="padding-top: 30px;">
+    <div class="row">
+        <div class="col-md-4" style="padding: 20px 20px;">
+            <h4 style="text-align: center; margin-bottom: 20px;" class="lang" key="kutuphane"></h4>
+            <ul class="kurumsalmenu" style="list-style: none; padding-left: 30px;">
+                {%- for item in kutuphaneler -%}
+                    {# class="menuactive" #}
+                    <li>
+                        <a href="{{item.url}}" class="lang" key="{{item.langkey}}"></a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+
+        <div class="col-md-8">
+            {{content | safe}}
+        </div>
+    </div>
+</div>

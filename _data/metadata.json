@@ -1,0 +1,21 @@
+{
+  "title": "Optimal Makine",
+  "url": "https://optimalmakine.com/",
+  "description": "Optimal makine description yazısı",
+  "keywords": "yazılım, software, python, django, asp, .net, c#, html, css, javascipt, js, bootstrap,entityframework",
+  "feed": {
+    "subtitle": "Optimal Makine.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://kitayazilim.com/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://kitayazilim.com/feed/feed.json"
+  },
+  "author": {
+    "name": "Kıta Yazılım Çözümleri",
+    "email": "info@kitayazilim.com",
+    "url": "https://kitayazilim.com/"
+  }
+}

@@ -1,0 +1,91 @@
+---
+layout: layouts/ik.njk
+tags: about
+---
+<link rel="stylesheet" href="{{'/assets/css/templatemo-style.css' | url}}"/>
+
+<div id="contact" class="row" style="padding-top:0; padding-bottom:200px">
+    <div class="col-md-12">
+        <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+            <span class="lang" key='basvuruform'></span>
+        </h2>
+    </div>
+    <div class="col-md-12">
+        <div class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s" id="oOutput"></div>
+    </div>
+    <form enctype="multipart/form-data col-md-12" method="post" name="fileinfo">
+        <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
+
+            <label class="lang" key="adi"></label>
+            <input name="firstname" type="text" class="form-control" id="firstname" style="color: #000" required="required"/>
+            <label class="lang" key="email"></label>
+            <input name="email" type="email" class="form-control" id="email" style="color: #000" required="required"/>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
+            <label class="lang" key="soyadi"></label>
+            <input name="lastname" type="text" class="form-control" id="lastname" style="color: #000" required="required"/>
+            <label class="lang" key="telefon"></label>
+            <input name="phone" type="phone" class="form-control" id="phone" style="color: #000"/>
+        </div>
+        <div class="col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
+            <label class="lang" key="mesaj"></label>
+            <textarea name="message" rows="4" class="form-control" id="message" style="color: #000" required="required"></textarea>
+        </div>
+        <div class="col-xs-6 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
+            <div class="file btn btn-lg btn-primary divfile lang" style="border-radius: 0;" key='btncv'>
+
+                <input type="file" name="file" id="file-selector" accept=".pdf" class="fileinput form-control"/>
+            </div>
+            <!-- <input type="file" name="file" id="file-selector" class="form-control" accept=".pdf" value="CV" required /> -->
+        </div>
+        <div class="col-xs-6 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
+            <input id="submit_button" type="submit" class="form-control" value="Gönder"/>
+        </div>
+    </form>
+</div>
+
+<script>
+    var form = document
+        .forms
+        .namedItem("fileinfo");
+    form.addEventListener("submit", function (ev) {
+        var oOutput = document.querySelector("#oOutput"),
+            oData = new FormData(form),
+            button = document.querySelector("#submit_button"),
+            email = document.querySelector("#email"),
+            first = document.querySelector("#firstname"),
+            last = document.querySelector("#lastname"),
+            phone = document.querySelector("#phone"),
+            msg = document.querySelector("#message");
+
+        oOutput.innerHTML = "Lütfen Bekleyin E-posta Gönderiliyor...";
+        button.disabled = true;
+        setTimeout(() => {
+            button.disabled = false;
+        }, 10000);
+
+        oData.delete("message");
+        oData.append("subject", "Başvuru Formu");
+        oData.append("company", "ronesansteknik");
+        oData.append("to", "info@ronesansteknik.com.tr");
+        oData.append("message", msg.value + "\n" + first.value + " " + last.value + "\n" + email.value + "\n" + phone.value);
+
+        var oReq = new XMLHttpRequest();
+        oReq.open("POST", "https://167.71.34.43:8083/public_yandex_send", true);
+
+        oReq.onload = function (oEvent) {
+            if (oReq.status == 200) {
+                oOutput.innerHTML = "E-posta Gönderildi";
+            } else if (oReq.status == 400) {
+                var msg = JSON.parse(oReq.response);
+                oOutput.innerHTML = "Hata oluştu." + msg.message;
+            } else if (oReq.status == 413) {
+                oOutput.innerHTML = "Hata oluştu." + "Dosya boyutu çok büyük";
+            } else {
+                oOutput.innerHTML = "Hata oluştu.E-posta Gönderilemedi";
+            }
+        };
+        oReq.send(oData);
+        ev.preventDefault();
+    }, false);
+</script>
