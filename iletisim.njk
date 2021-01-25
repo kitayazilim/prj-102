@@ -17,7 +17,7 @@ layout: layouts/base.njk
             <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
                 <form form="form" enctype="multipart/form-data" method="post" name="iletisim_formu">
                     <label class="lang" key="adi"></label>
-                    <input name="fullname" type="text" class="form-control" id="fullname" required="required" style="color: #000"/>
+                    <input name="firstname" type="text" class="form-control" id="firstname" required="required" style="color: #000"/>
 
                     <label class="lang" key="email"></label>
                     <input name="email" type="email" class="form-control" id="email" required="required" style="color: #000"/>
@@ -92,29 +92,34 @@ layout: layouts/base.njk
     var form = document
         .forms
         .namedItem("iletisim_formu");
+        
     form.addEventListener("submit", function (ev) {
+        debugger;
         var oOutput = document.querySelector("#oOutput"),
             oData = new FormData(form),
             button = document.querySelector("#submit_button"),
-            email = document.querySelector("#email"),
-            first = document.querySelector("#firstname"),
-            last = document.querySelector("#lastname"),
-            phone = document.querySelector("#phone"),
-            msg = document.querySelector("#message");
-
+            email = document.querySelector("#email") && document.querySelector("#email").value || '',
+            first = document.querySelector("#firstname") && document.querySelector("#firstname").value || '',
+            last = document.querySelector("#lastname") && document.querySelector("#lastname").value || '',
+            phone = document.querySelector("#phone") && document.querySelector("#phone").value || '',
+            msg = document.querySelector("#message") && document.querySelector("#message").value || '';
+        
         oOutput.innerHTML = "Lütfen Bekleyin E-posta Gönderiliyor...";
         button.disabled = true;
         setTimeout(() => {
             button.disabled = false;
         }, 10000);
-
+        
         oData.delete("message");
         oData.append("subject", "Başvuru Formu");
         oData.append("company", "optimalmakina");
-        oData.append("message", msg.value + "\n" + first.value + " " + last.value + "\n" + email.value + "\n" + phone.value);
+        oData.append("message", 
+        `${msg}
+        ${first} ${last}
+        ${email} ${phone}`);
 
         var oReq = new XMLHttpRequest();
-        oReq.open("POST", "/public_send", true);
+        oReq.open("POST", "/send_mail", true);
 
         oReq.onload = function (oEvent) {
             if (oReq.status == 200) {
