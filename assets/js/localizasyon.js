@@ -2,7 +2,6 @@
 $(function () {
 
   var lang = getCookie("_culture");
-  debugger;
   if (lang == null) {
     lang = navigator.language.substring(0, 2);
     if (!lang.length > 0) {

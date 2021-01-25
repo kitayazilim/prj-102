@@ -87,3 +87,48 @@ layout: layouts/base.njk
     </div>
 </section>
 <!-- google-map-section end -->
+
+<script>
+    var form = document
+        .forms
+        .namedItem("iletisim_formu");
+    form.addEventListener("submit", function (ev) {
+        var oOutput = document.querySelector("#oOutput"),
+            oData = new FormData(form),
+            button = document.querySelector("#submit_button"),
+            email = document.querySelector("#email"),
+            first = document.querySelector("#firstname"),
+            last = document.querySelector("#lastname"),
+            phone = document.querySelector("#phone"),
+            msg = document.querySelector("#message");
+
+        oOutput.innerHTML = "Lütfen Bekleyin E-posta Gönderiliyor...";
+        button.disabled = true;
+        setTimeout(() => {
+            button.disabled = false;
+        }, 10000);
+
+        oData.delete("message");
+        oData.append("subject", "Başvuru Formu");
+        oData.append("company", "optimalmakina");
+        oData.append("message", msg.value + "\n" + first.value + " " + last.value + "\n" + email.value + "\n" + phone.value);
+
+        var oReq = new XMLHttpRequest();
+        oReq.open("POST", "/public_send", true);
+
+        oReq.onload = function (oEvent) {
+            if (oReq.status == 200) {
+                oOutput.innerHTML = "E-posta Gönderildi";
+            } else if (oReq.status == 400) {
+                var msg = JSON.parse(oReq.response);
+                oOutput.innerHTML = "Hata oluştu." + msg.message;
+            } else if (oReq.status == 413) {
+                oOutput.innerHTML = "Hata oluştu." + "Dosya boyutu çok büyük";
+            } else {
+                oOutput.innerHTML = "Hata oluştu.E-posta Gönderilemedi";
+            }
+        };
+        oReq.send(oData);
+        ev.preventDefault();
+    }, false);
+</script>
