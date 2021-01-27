@@ -52,11 +52,11 @@ tags: about
         var oOutput = document.querySelector("#oOutput"),
             oData = new FormData(form),
             button = document.querySelector("#submit_button"),
-            email = document.querySelector("#email"),
-            first = document.querySelector("#firstname"),
-            last = document.querySelector("#lastname"),
-            phone = document.querySelector("#phone"),
-            msg = document.querySelector("#message");
+            email = document.querySelector("#email") && document.querySelector("#email").value || '',
+            first = document.querySelector("#firstname") && document.querySelector("#firstname").value || '',
+            last = document.querySelector("#lastname") && document.querySelector("#lastname").value || '',
+            phone = document.querySelector("#phone") && document.querySelector("#phone").value || '',
+            msg = document.querySelector("#message") && document.querySelector("#message").value || '';    
 
         oOutput.innerHTML = "Lütfen Bekleyin E-posta Gönderiliyor...";
         button.disabled = true;
@@ -66,12 +66,15 @@ tags: about
 
         oData.delete("message");
         oData.append("subject", "Başvuru Formu");
-        oData.append("company", "ronesansteknik");
-        oData.append("to", "info@ronesansteknik.com.tr");
-        oData.append("message", msg.value + "\n" + first.value + " " + last.value + "\n" + email.value + "\n" + phone.value);
+        oData.append("company", "optimalmakina");
+        oData.append("to", "info@optimalmakina.com.tr");
+        oData.append("message", 
+        `${msg}
+        ${first} ${last}
+        ${email} ${phone}`);
 
         var oReq = new XMLHttpRequest();
-        oReq.open("POST", "https://167.71.34.43:8083/public_yandex_send", true);
+        oReq.open("POST", "/send_mail", true);
 
         oReq.onload = function (oEvent) {
             if (oReq.status == 200) {
